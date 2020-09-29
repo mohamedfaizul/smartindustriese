@@ -12,7 +12,7 @@
         android:label="smartindustries"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBHkynXYavN_GIO7g1SmomdBvMb_op97sE"/>
+            android:value="AIzaSyAetxnwUlVCGld7pkaA-N0_eigD3FkRdmY"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -46,7 +46,7 @@
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data
             android:name="flutterEmbedding"
-            android:value="2" />
+            android:value="2"/>
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
     </application>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />

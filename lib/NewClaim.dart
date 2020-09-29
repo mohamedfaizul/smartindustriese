@@ -691,7 +691,7 @@ class _NewClaimState extends State<NewClaim> {
                 ),
               ),
             ),
-            buildTextFieldNumbers('Claim Summary'),
+
             Container(
               child: Center(
                 child: Row(

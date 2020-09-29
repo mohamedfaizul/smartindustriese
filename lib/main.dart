@@ -2,8 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'dart:async';
-//import 'package:flutter_ui_splash_screen/homeScreen.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:smartindustries/PinInput.dart';
 void main() => runApp(MyApp());
 

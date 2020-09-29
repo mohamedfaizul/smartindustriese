@@ -967,13 +967,20 @@ Future<File> _imageFile;
                             new Row(
                               children: <Widget>[
                                 new Text(
-                                  "Paid Date",
+                                  "Paid Date  ",
                                   textAlign: TextAlign.left,
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
-
+                            Padding(
+                              padding: const EdgeInsets.only(top: 4.0),
+                              child: new Row(
+                                children: <Widget>[
+                                  new Text("20-02-19", textAlign: TextAlign.left)
+                                ],
+                              ),
+                            )
                           ],
                         ),
                       ),

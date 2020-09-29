@@ -187,7 +187,7 @@ class _NewPropertyState extends State<NewProperty> {
                 ),
               ],
             ),
-            buildTextField("Type a Keyword"),
+            buildTextField("Group Name"),
             new Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[

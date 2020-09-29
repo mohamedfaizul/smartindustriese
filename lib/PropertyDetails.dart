@@ -7,18 +7,14 @@ import 'ImageUploadModel.dart';
 import 'PlanList.dart';
 
 class PropertyDetails extends StatefulWidget {
-
-
-
   @override
   _PropertyDetailsState createState() => _PropertyDetailsState();
 }
 
 class _PropertyDetailsState extends State<PropertyDetails> {
-
-File _image;
-List<Object> images = List<Object>();
-Future<File> _imageFile;
+  File _image;
+  List<Object> images = List<Object>();
+  Future<File> _imageFile;
 
   List<ListItem> _TankType = [
     ListItem(1, "Rectangle"),
@@ -28,20 +24,17 @@ Future<File> _imageFile;
   List<DropdownMenuItem<ListItem>> _dropdownMenuItems__TankType;
   ListItem _selectedItemone__TankType;
 
-
-
   void initState() {
     super.initState();
 
-
-    _dropdownMenuItems__TankType=buildDropDownMenuItems((_TankType));
+    _dropdownMenuItems__TankType = buildDropDownMenuItems((_TankType));
     _selectedItemone__TankType = _dropdownMenuItems__TankType[0].value;
     images.add("Add Image");
     images.add("Add Image");
     images.add("Add Image");
     images.add("Add Image");
-
   }
+
   List<DropdownMenuItem<ListItem>> buildDropDownMenuItems(List listItems) {
     List<DropdownMenuItem<ListItem>> items = List();
     for (ListItem listItem in listItems) {
@@ -55,7 +48,6 @@ Future<File> _imageFile;
     return items;
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,9 +59,7 @@ Future<File> _imageFile;
           addRepaintBoundaries: true,
           shrinkWrap: true,
           children: <Widget>[
-
             SizedBox(height: 10),
-
             new Card(
               elevation: 1.0,
               color: Colors.redAccent[100],
@@ -109,32 +99,8 @@ Future<File> _imageFile;
                 ),
               ),
             ),
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                new Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: new TextField(
-                      decoration: InputDecoration(
-                        hintText: ' name',
-                        hintStyle: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 16.0,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-
-              ],
-            ),
             buildTextFieldSignup('Name'),
             buildTextFieldNumbers('Address'),
-
             new Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -213,98 +179,6 @@ Future<File> _imageFile;
                 ),
               ),
             ),
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                new Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: new DropdownButton<ListItem>(
-                        value: _selectedItemone__TankType,
-                        items: _dropdownMenuItems__TankType,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedItemone__TankType = value;
-                          });
-                        }),
-                  ),
-                ),
-                new Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: new TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Capacity 100L',
-                        hintStyle: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 16.0,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                new Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: new TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Height',
-                        hintStyle: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 16.0,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                new Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: new TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Length',
-                        hintStyle: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 16.0,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                new Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: new TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Width',
-                        hintStyle: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 16.0,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-
             new Card(
               elevation: 1.0,
               color: Colors.redAccent[100],
@@ -345,10 +219,8 @@ Future<File> _imageFile;
               ),
             ),
             Expanded(
-              child:buildGridView(),
+              child: buildGridView(),
             ),
-
-
             new Card(
               elevation: 1.0,
               color: Colors.redAccent[100],
@@ -392,7 +264,6 @@ Future<File> _imageFile;
               elevation: 4.0,
               margin: EdgeInsets.all(5.0),
               child: InkWell(
-
                 splashColor: Colors.redAccent,
                 borderRadius: BorderRadius.circular(20),
                 child: Center(
@@ -467,14 +338,14 @@ Future<File> _imageFile;
                               padding: const EdgeInsets.only(top: 5.0),
                               child: new Row(
                                 children: <Widget>[
-                                  new Text("Tank-1000L", textAlign: TextAlign.left)
+                                  new Text("Tank-1000L",
+                                      textAlign: TextAlign.left)
                                 ],
                               ),
                             )
                           ],
                         ),
                       ),
-
                       Padding(
                         padding: const EdgeInsets.all(6.0),
                         child: new Column(
@@ -534,7 +405,6 @@ Future<File> _imageFile;
               elevation: 4.0,
               margin: EdgeInsets.all(5.0),
               child: InkWell(
-
                 splashColor: Colors.redAccent,
                 borderRadius: BorderRadius.circular(20),
                 child: Center(
@@ -609,14 +479,14 @@ Future<File> _imageFile;
                               padding: const EdgeInsets.only(top: 5.0),
                               child: new Row(
                                 children: <Widget>[
-                                  new Text("Tank-1000L", textAlign: TextAlign.left)
+                                  new Text("Tank-1000L",
+                                      textAlign: TextAlign.left)
                                 ],
                               ),
                             )
                           ],
                         ),
                       ),
-
                       Padding(
                         padding: const EdgeInsets.all(6.0),
                         child: new Column(
@@ -715,7 +585,6 @@ Future<File> _imageFile;
               elevation: 4.0,
               margin: EdgeInsets.all(5.0),
               child: InkWell(
-
                 splashColor: Colors.redAccent,
                 borderRadius: BorderRadius.circular(20),
                 child: Center(
@@ -790,14 +659,14 @@ Future<File> _imageFile;
                               padding: const EdgeInsets.only(top: 5.0),
                               child: new Row(
                                 children: <Widget>[
-                                  new Text("Tank-1000L", textAlign: TextAlign.left)
+                                  new Text("Tank-1000L",
+                                      textAlign: TextAlign.left)
                                 ],
                               ),
                             )
                           ],
                         ),
                       ),
-
                       Padding(
                         padding: const EdgeInsets.all(6.0),
                         child: new Column(
@@ -857,7 +726,6 @@ Future<File> _imageFile;
               elevation: 4.0,
               margin: EdgeInsets.all(5.0),
               child: InkWell(
-
                 splashColor: Colors.redAccent,
                 borderRadius: BorderRadius.circular(20),
                 child: Center(
@@ -932,14 +800,14 @@ Future<File> _imageFile;
                               padding: const EdgeInsets.only(top: 5.0),
                               child: new Row(
                                 children: <Widget>[
-                                  new Text("Tank-1000L", textAlign: TextAlign.left)
+                                  new Text("Tank-1000L",
+                                      textAlign: TextAlign.left)
                                 ],
                               ),
                             )
                           ],
                         ),
                       ),
-
                       Padding(
                         padding: const EdgeInsets.all(6.0),
                         child: new Column(
@@ -1038,7 +906,6 @@ Future<File> _imageFile;
               elevation: 4.0,
               margin: EdgeInsets.all(5.0),
               child: InkWell(
-
                 splashColor: Colors.redAccent,
                 borderRadius: BorderRadius.circular(20),
                 child: Center(
@@ -1113,14 +980,14 @@ Future<File> _imageFile;
                               padding: const EdgeInsets.only(top: 5.0),
                               child: new Row(
                                 children: <Widget>[
-                                  new Text("Tank-1000L", textAlign: TextAlign.left)
+                                  new Text("Tank-1000L",
+                                      textAlign: TextAlign.left)
                                 ],
                               ),
                             )
                           ],
                         ),
                       ),
-
                       Padding(
                         padding: const EdgeInsets.all(6.0),
                         child: new Column(
@@ -1180,7 +1047,6 @@ Future<File> _imageFile;
               elevation: 4.0,
               margin: EdgeInsets.all(5.0),
               child: InkWell(
-
                 splashColor: Colors.redAccent,
                 borderRadius: BorderRadius.circular(20),
                 child: Center(
@@ -1255,14 +1121,14 @@ Future<File> _imageFile;
                               padding: const EdgeInsets.only(top: 5.0),
                               child: new Row(
                                 children: <Widget>[
-                                  new Text("Tank-1000L", textAlign: TextAlign.left)
+                                  new Text("Tank-1000L",
+                                      textAlign: TextAlign.left)
                                 ],
                               ),
                             )
                           ],
                         ),
                       ),
-
                       Padding(
                         padding: const EdgeInsets.all(6.0),
                         child: new Column(
@@ -1361,7 +1227,6 @@ Future<File> _imageFile;
               elevation: 4.0,
               margin: EdgeInsets.all(5.0),
               child: InkWell(
-
                 splashColor: Colors.redAccent,
                 borderRadius: BorderRadius.circular(20),
                 child: Center(
@@ -1436,14 +1301,14 @@ Future<File> _imageFile;
                               padding: const EdgeInsets.only(top: 5.0),
                               child: new Row(
                                 children: <Widget>[
-                                  new Text("Tank-1000L", textAlign: TextAlign.left)
+                                  new Text("Tank-1000L",
+                                      textAlign: TextAlign.left)
                                 ],
                               ),
                             )
                           ],
                         ),
                       ),
-
                       Padding(
                         padding: const EdgeInsets.all(6.0),
                         child: new Column(
@@ -1503,7 +1368,6 @@ Future<File> _imageFile;
               elevation: 4.0,
               margin: EdgeInsets.all(5.0),
               child: InkWell(
-
                 splashColor: Colors.redAccent,
                 borderRadius: BorderRadius.circular(20),
                 child: Center(
@@ -1578,14 +1442,14 @@ Future<File> _imageFile;
                               padding: const EdgeInsets.only(top: 5.0),
                               child: new Row(
                                 children: <Widget>[
-                                  new Text("Tank-1000L", textAlign: TextAlign.left)
+                                  new Text("Tank-1000L",
+                                      textAlign: TextAlign.left)
                                 ],
                               ),
                             )
                           ],
                         ),
                       ),
-
                       Padding(
                         padding: const EdgeInsets.all(6.0),
                         child: new Column(
@@ -1641,10 +1505,6 @@ Future<File> _imageFile;
                 ),
               ),
             ),
-
-
-
-
             Container(
               child: Center(
                 child: Row(
@@ -1677,8 +1537,7 @@ Future<File> _imageFile;
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  PlanList(),
+                              builder: (BuildContext context) => PlanList(),
                             ));
                       },
                     ),
@@ -1699,10 +1558,6 @@ Future<File> _imageFile;
 //                            ));
                       },
                     ),
-
-
-
-
                   ],
                 ),
               ),
@@ -1750,81 +1605,77 @@ Future<File> _imageFile;
     );
   }
 
-
-
-Widget buildGridView() {
-  return GridView.count(
-    shrinkWrap: true,
-    crossAxisCount: 3,
-    childAspectRatio: 1,
-    children: List.generate(images.length, (index) {
-      if (images[index] is ImageUploadModel) {
-        ImageUploadModel uploadModel = images[index];
-        return Card(
-          clipBehavior: Clip.antiAlias,
-          child: Stack(
-            children: <Widget>[
-              Image.file(
-                uploadModel.imageFile,
-                width: 300,
-                height: 300,
-              ),
-              Positioned(
-                right: 5,
-                top: 5,
-                child: InkWell(
-                  child: Icon(
-                    Icons.remove_circle,
-                    size: 20,
-                    color: Colors.red,
-                  ),
-                  onTap: () {
-                    setState(() {
-                      images.replaceRange(index, index + 1, ['Add Image']);
-                    });
-                  },
+  Widget buildGridView() {
+    return GridView.count(
+      shrinkWrap: true,
+      crossAxisCount: 3,
+      childAspectRatio: 1,
+      children: List.generate(images.length, (index) {
+        if (images[index] is ImageUploadModel) {
+          ImageUploadModel uploadModel = images[index];
+          return Card(
+            clipBehavior: Clip.antiAlias,
+            child: Stack(
+              children: <Widget>[
+                Image.file(
+                  uploadModel.imageFile,
+                  width: 300,
+                  height: 300,
                 ),
-              ),
-            ],
-          ),
-        );
-      } else {
-        return Card(
-          child: IconButton(
-            icon: Icon(Icons.add),
-            onPressed: () {
-              _onAddImageClick(index);
-            },
-          ),
-        );
-      }
-    }),
-  );
-}
+                Positioned(
+                  right: 5,
+                  top: 5,
+                  child: InkWell(
+                    child: Icon(
+                      Icons.remove_circle,
+                      size: 20,
+                      color: Colors.red,
+                    ),
+                    onTap: () {
+                      setState(() {
+                        images.replaceRange(index, index + 1, ['Add Image']);
+                      });
+                    },
+                  ),
+                ),
+              ],
+            ),
+          );
+        } else {
+          return Card(
+            child: IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () {
+                _onAddImageClick(index);
+              },
+            ),
+          );
+        }
+      }),
+    );
+  }
 
-Future _onAddImageClick(int index) async {
-  setState(() {
-    _imageFile = ImagePicker.pickImage(source: ImageSource.gallery);
-    getFileImage(index);
-  });
-}
+  Future _onAddImageClick(int index) async {
+    setState(() {
+      _imageFile = ImagePicker.pickImage(source: ImageSource.gallery);
+      getFileImage(index);
+    });
+  }
 
-void getFileImage(int index) async {
+  void getFileImage(int index) async {
 //    var dir = await path_provider.getTemporaryDirectory();
 
-  _imageFile.then((file) async {
-    setState(() {
-      ImageUploadModel imageUpload = new ImageUploadModel();
-      imageUpload.isUploaded = false;
-      imageUpload.uploading = false;
-      imageUpload.imageFile = file;
-      imageUpload.imageUrl = '';
-      images.replaceRange(index, index + 1, [imageUpload]);
+    _imageFile.then((file) async {
+      setState(() {
+        ImageUploadModel imageUpload = new ImageUploadModel();
+        imageUpload.isUploaded = false;
+        imageUpload.uploading = false;
+        imageUpload.imageFile = file;
+        imageUpload.imageUrl = '';
+        images.replaceRange(index, index + 1, [imageUpload]);
+      });
     });
-  });
-
-}
-
+  }
 }
 
 class ListItem {

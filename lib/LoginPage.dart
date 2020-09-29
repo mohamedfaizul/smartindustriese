@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:smartindustries/MapSample.dart';
+import 'package:smartindustries/MyCustomForm.dart';
+import 'package:smartindustries/SignUpNew.dart';
+import 'package:smartindustries/mapsearch.dart';
 import './SignUpForgetPassword.dart';
 import './NewGroup.dart';
-
-
 
 class LoginPage extends StatelessWidget {
   @override
@@ -11,8 +13,8 @@ class LoginPage extends StatelessWidget {
       body: LoginPages(),
     );
   }
-
 }
+
 class LoginPages extends StatefulWidget {
   @override
   _LoginPagesState createState() => _LoginPagesState();
@@ -27,13 +29,16 @@ class _LoginPagesState extends State<LoginPages> {
     });
   }
 
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       body: Container(
         padding:
-        EdgeInsets.only(top: 90.0, right: 20.0, left: 20.0, bottom: 20.0),
+            EdgeInsets.only(top: 90.0, right: 20.0, left: 20.0, bottom: 20.0),
         child: Column(
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -61,7 +66,22 @@ class _LoginPagesState extends State<LoginPages> {
             SizedBox(
               height: 20.0,
             ),
-            buildTextField("Password"),
+            TextField(
+              controller: emailController,
+              decoration: InputDecoration(
+                hintText: 'Password',
+                hintStyle: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 16.0,
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+                prefixIcon: 'Password' == "Email"
+                    ? Icon(Icons.email)
+                    : Icon(Icons.lock),
+              ),
+            ),
             SizedBox(
               height: 20.0,
             ),
@@ -106,7 +126,7 @@ class _LoginPagesState extends State<LoginPages> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SignUpForgetPassword()));
+                                builder: (context) => validate()));
                       },
                       child: Container(
                         child: Text("SIGN UP"),
@@ -136,11 +156,11 @@ class _LoginPagesState extends State<LoginPages> {
         prefixIcon: hintText == "Email" ? Icon(Icons.email) : Icon(Icons.lock),
         suffixIcon: hintText == "Password"
             ? IconButton(
-          onPressed: _toggleVisibility,
-          icon: _isHidden
-              ? Icon(Icons.visibility_off)
-              : Icon(Icons.visibility),
-        )
+                onPressed: _toggleVisibility,
+                icon: _isHidden
+                    ? Icon(Icons.visibility_off)
+                    : Icon(Icons.visibility),
+              )
             : null,
       ),
       obscureText: hintText == "Password" ? _isHidden : false,
@@ -150,22 +170,23 @@ class _LoginPagesState extends State<LoginPages> {
   Widget ButtonContainer() {
     return Container(
         child: Center(
-          child: RaisedButton(
-            child: Text('Login'),
-            color: Colors.redAccent,
-            textColor: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => NewGroup(),
-                  ));
-              //  Navigator.push(context, MaterialPageRoute(builder: (context) => SecondRoute extends StatelessWidget());
-            },
-          ),
-        ));
+      child: RaisedButton(
+        child: Text('Login'),
+        color: Colors.redAccent,
+        textColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        onPressed: () {
+          print(emailController.text);
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => mapsearch(),
+              ));
+          //  Navigator.push(context, MaterialPageRoute(builder: (context) => SecondRoute extends StatelessWidget());
+        },
+      ),
+    ));
   }
 }

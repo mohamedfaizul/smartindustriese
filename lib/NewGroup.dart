@@ -22,6 +22,7 @@ class _NewGroupState extends State<NewGroup> {
   File _image;
 
   List<ListItem> _PropertyType = [
+    ListItem(1, "Property Type"),
     ListItem(1, "Tank"),
     ListItem(2, "Sump"),
     ListItem(3, "Sump-Tile"),
@@ -30,14 +31,17 @@ class _NewGroupState extends State<NewGroup> {
     ListItem(4, "Floor")
   ];
   List<ListItem> _TankType = [
+    ListItem(1, "Tank Type"),
     ListItem(1, "Rectangle"),
     ListItem(4, "Cylinder")
   ];
   List<ListItem> _PlanType = [
+    ListItem(1, "Plan Type"),
     ListItem(1, "Plan From Master"),
     ListItem(4, "Others")
   ];
   List<ListItem> _ServiceType = [
+    ListItem(1, "Service Type"),
     ListItem(1, "Residential"),
     ListItem(4, "Commercial")
   ];
@@ -68,6 +72,8 @@ class _NewGroupState extends State<NewGroup> {
     _dropdownMenuItems__TankType = buildDropDownMenuItems((_TankType));
     _selectedItemone__TankType = _dropdownMenuItems__TankType[0].value;
 
+    images.add("Add Image");
+    images.add("Add Image");
     images.add("Add Image");
     images.add("Add Image");
     images.add("Add Image");

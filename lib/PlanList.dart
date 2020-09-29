@@ -2,46 +2,23 @@ import 'package:flutter/material.dart';
 
 import 'PlanEdit.dart';
 
-
 class PlanList extends StatefulWidget {
   @override
   _PlanListState createState() => _PlanListState();
 }
 
 class _PlanListState extends State<PlanList> {
+  List<ListItem> _PropertyType = [ListItem(1, "Property Name")];
+  List<ListItem> _TankType = [ListItem(1, "Plan")];
+  List<ListItem> _PlanType = [ListItem(1, "Group")];
+  List<ListItem> _ServiceType = [ListItem(1, "Service Type")];
 
-  List<ListItem> _PropertyType = [
-
-    ListItem(1, "Property Name")
-
-
-  ];
-  List<ListItem> _TankType = [
-
-    ListItem(1, "Plan")
-
-
-  ];
-  List<ListItem> _PlanType = [
-    ListItem(1, "Group")
-
-  ];
-  List<ListItem> _ServiceType = [
-    ListItem(1, "Service Type")
-
-  ];
-
-  List<ListItem> _Status = [
-    ListItem(1, "Status")
-
-  ];
-
+  List<ListItem> _Status = [ListItem(1, "Status")];
 
   List<DropdownMenuItem<ListItem>> _dropdownMenuItems;
   ListItem _selectedItem;
   List<DropdownMenuItem<ListItem>> _dropdownMenuItemsStatus;
   ListItem _selectedItemStatus;
-
 
   List<DropdownMenuItem<ListItem>> _dropdownMenuItems_service_type;
   ListItem _selectedItemone__service_type;
@@ -52,10 +29,7 @@ class _PlanListState extends State<PlanList> {
   List<DropdownMenuItem<ListItem>> _dropdownMenuItems__TankType;
   ListItem _selectedItemone__TankType;
 
-
-
   void initState() {
-
     super.initState();
     _dropdownMenuItems = buildDropDownMenuItems(_PropertyType);
     _selectedItem = _dropdownMenuItems[0].value;
@@ -63,15 +37,14 @@ class _PlanListState extends State<PlanList> {
     _dropdownMenuItemsStatus = buildDropDownMenuItems(_Status);
     _selectedItemStatus = _dropdownMenuItemsStatus[0].value;
 
-    _dropdownMenuItems_service_type=buildDropDownMenuItems((_ServiceType));
+    _dropdownMenuItems_service_type = buildDropDownMenuItems((_ServiceType));
     _selectedItemone__service_type = _dropdownMenuItems_service_type[0].value;
 
-    _dropdownMenuItems_PlanType=buildDropDownMenuItems((_PlanType));
+    _dropdownMenuItems_PlanType = buildDropDownMenuItems((_PlanType));
     _selectedItemone_PlanType = _dropdownMenuItems_PlanType[0].value;
 
-    _dropdownMenuItems__TankType=buildDropDownMenuItems((_TankType));
+    _dropdownMenuItems__TankType = buildDropDownMenuItems((_TankType));
     _selectedItemone__TankType = _dropdownMenuItems__TankType[0].value;
-
   }
 
   List<DropdownMenuItem<ListItem>> buildDropDownMenuItems(List listItems) {
@@ -100,7 +73,6 @@ class _PlanListState extends State<PlanList> {
           addRepaintBoundaries: true,
           shrinkWrap: true,
           children: <Widget>[
-
             new Card(
               elevation: 1.0,
               color: Colors.black38,
@@ -140,7 +112,6 @@ class _PlanListState extends State<PlanList> {
                 ),
               ),
             ),
-
             new Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -170,8 +141,6 @@ class _PlanListState extends State<PlanList> {
                         }),
                   ),
                 ),
-
-
               ],
             ),
             new Row(
@@ -218,7 +187,6 @@ class _PlanListState extends State<PlanList> {
                     }),
               ),
             ),
-
             Container(
               child: Center(
                 child: Row(
@@ -235,8 +203,7 @@ class _PlanListState extends State<PlanList> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  PlanEdit(),
+                              builder: (BuildContext context) => PlanEdit(),
                             ));
                       },
                     ),
@@ -257,22 +224,15 @@ class _PlanListState extends State<PlanList> {
 //                            ));
                       },
                     ),
-
-
-
-
                   ],
                 ),
               ),
             ),
             buildTextField("Type a Keyword"),
-
-
             new Card(
               elevation: 4.0,
               margin: EdgeInsets.all(5.0),
               child: InkWell(
-
                 splashColor: Colors.redAccent,
                 borderRadius: BorderRadius.circular(20),
                 child: Center(
@@ -347,14 +307,14 @@ class _PlanListState extends State<PlanList> {
                               padding: const EdgeInsets.only(top: 5.0),
                               child: new Row(
                                 children: <Widget>[
-                                  new Text("Tank-1000L", textAlign: TextAlign.left)
+                                  new Text("Tank-1000L",
+                                      textAlign: TextAlign.left)
                                 ],
                               ),
                             )
                           ],
                         ),
                       ),
-
                       Padding(
                         padding: const EdgeInsets.all(6.0),
                         child: new Column(
@@ -414,7 +374,6 @@ class _PlanListState extends State<PlanList> {
               elevation: 4.0,
               margin: EdgeInsets.all(5.0),
               child: InkWell(
-
                 splashColor: Colors.redAccent,
                 borderRadius: BorderRadius.circular(20),
                 child: Center(
@@ -489,14 +448,14 @@ class _PlanListState extends State<PlanList> {
                               padding: const EdgeInsets.only(top: 5.0),
                               child: new Row(
                                 children: <Widget>[
-                                  new Text("Tank-1000L", textAlign: TextAlign.left)
+                                  new Text("Tank-1000L",
+                                      textAlign: TextAlign.left)
                                 ],
                               ),
                             )
                           ],
                         ),
                       ),
-
                       Padding(
                         padding: const EdgeInsets.all(6.0),
                         child: new Column(
@@ -552,25 +511,15 @@ class _PlanListState extends State<PlanList> {
                 ),
               ),
             ),
-
-
-
-
-
           ],
         ),
       ),
-
-
-
 
       appBar: AppBar(
         title: Text('Plan List'),
       ),
     );
   }
-
-
 
   buildTextFieldSignup(String hintText) {
     return TextField(
@@ -605,6 +554,7 @@ class _PlanListState extends State<PlanList> {
       //obscureText: hintText == "Password" ? isHidden : false,
     );
   }
+
   Widget buildTextField(String hintText) {
     return TextField(
       decoration: InputDecoration(
@@ -616,13 +566,13 @@ class _PlanListState extends State<PlanList> {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5.0),
         ),
-        prefixIcon: hintText == "Email" ? Icon(Icons.email) : Icon(Icons.search),
-
+        prefixIcon:
+            hintText == "Email" ? Icon(Icons.email) : Icon(Icons.search),
       ),
-
     );
   }
 }
+
 class ListItem {
   int value;
   String name;

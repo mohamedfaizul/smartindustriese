@@ -595,8 +595,6 @@ class _ServiceDamageNodamageState extends State<ServiceDamageNodamage> {
                     }),
               ],
             ),
-            buildTextFieldNumbers('Damage Summary'),
-
 
             new Card(
               elevation: 1.0,
